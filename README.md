@@ -17,12 +17,6 @@ Of the 1.52 million acres inside the Chattahoochee National Forest's ranger dist
 
 For a visitor who is unfamiliar with public land management, the boundaries of a forest can be confusing. This map helps explain why land access can be patchy inside ranger district boundaries. Maps of the Chattahoochee that use only the administrative boundary roughly double the apparent size of public land, so a visitor may assume land is public when it isn't. Next steps would be breaking "non-FS" into its actual owners (private, state, other federal) and looking at how the Forest Service has acquired land over time.
 
-## Data
-
-- Ranger district boundaries: USDA Forest Service, Ranger District Boundaries (`BdyAdm_LSRS_RangerDistrict`), accessed Nov 2026. [Download](https://data.fs.usda.gov/geodata/edw/datasets.php) · [Metadata](https://data.fs.usda.gov/geodata/edw/edw_resources/meta/BdyAdm_LSRS_RangerDistrict.xml)
-- Forest Service ownership: USDA Forest Service, Basic Ownership (`BdyOwn_LSRS_BasicOwnership`), accessed Nov 2026. [Download](https://data.fs.usda.gov/geodata/edw/datasets.php) · [Metadata](https://data.fs.usda.gov/geodata/edw/edw_resources/meta/BdyOwn_LSRS_BasicOwnership.xml)
-- Basemap: © OpenStreetMap contributors (shown in grayscale)
-
 ## Method
 
 Tools: QGIS 3.44.15 (Solothurn)
@@ -40,6 +34,12 @@ Tools: QGIS 3.44.15 (Solothurn)
 - Ownership is not the same as management: the Forest Service also works on non-FS land through partnerships (e.g. fire, conservation easements, watershed projects), which this map doesn't show.
 - Covers the three Chattahoochee ranger districts only; the Oconee National Forest is not included.
 - Ownership data changes as the Forest Service buys and sells land; figures reflect the layer as accessed in Nov 2026.
+
+## Data
+
+- Ranger district boundaries: USDA Forest Service, Ranger District Boundaries (`BdyAdm_LSRS_RangerDistrict`), accessed Nov 2026. [Download](https://data.fs.usda.gov/geodata/edw/datasets.php) · [Metadata](https://data.fs.usda.gov/geodata/edw/edw_resources/meta/BdyAdm_LSRS_RangerDistrict.xml)
+- Forest Service ownership: USDA Forest Service, Basic Ownership (`BdyOwn_LSRS_BasicOwnership`), accessed Nov 2026. [Download](https://data.fs.usda.gov/geodata/edw/datasets.php) · [Metadata](https://data.fs.usda.gov/geodata/edw/edw_resources/meta/BdyOwn_LSRS_BasicOwnership.xml)
+- Basemap: © OpenStreetMap contributors (shown in grayscale)
 
 ## Files
 
