@@ -1,6 +1,6 @@
 # Land Ownership Within the Chattahoochee National Forest
 
-![Map of non-Forest Service land by ranger district](map.png)
+![Map of non-Forest Service land by ranger district](chattahoochee-ownership.png)
 
 ## Question
 
