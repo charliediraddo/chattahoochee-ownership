@@ -2,7 +2,7 @@
 
 ## Question
 
-National forest boundaries on a map look solid, but much of the land inside them is owned by someone other than the Forest Service. How much of each Chattahoochee ranger district is actually non-Forest Service land?
+How much land within the Chattahoochee National Forest’s boundaries isn’t owned by the Forest Service, and how does that vary by ranger district?
 
 ## Finding
 
@@ -21,19 +21,19 @@ For a visitor who is unfamiliar with public land management, the boundaries of a
 
 Tools: QGIS 3.44.15 (Solothurn)
 
-1. Loaded the ranger district and Basic Ownership layers; ran Fix Geometries on both.
-2. Fixed a projection error: one layer was labeled EPSG:5070 but its coordinates were still in degrees. Set its CRS to EPSG:4269 (what the coordinates actually were), then reprojected to EPSG:5070 (NAD83 / CONUS Albers), an equal-area projection, so acreage is accurate. An earlier intersection built on the mislabeled layer was discarded and rebuilt.
+1. Loaded the ranger district and Basic Ownership layers, fixed geometries on both.
+2. Reprojected both layers to an equal-area projection (EPSG:5070). This was to fix an earlier error where reprojecting the intersection of the ownership and district boundaries to EPSG:5070 changed the CRS label but its extent still showed degree values. QGIS treated them as meters and placed the layer incorrectly.
 3. Intersected the non-Forest Service ownership with the district boundaries to get non-FS land within each district.
-4. Calculated acres with the Field Calculator: `area(@geometry) / 4046.8564224`, stored as a real field.
-5. Summed non-FS acres by district (Statistics by Categories), joined the sums to the districts layer, and calculated `pct_nonfs = 100 × non-FS acres ÷ total district acres`.
+5. Calculated acres from meters with the Field Calculator.
+6. Summed non-FS acres by district (Statistics by Categories), joined the sums to the districts layer, and calculated percentage as `pct_nonfs = 100 × non-FS acres ÷ total district acres`.
 
 ## Limits
 
 - Ownership boundaries come from the Forest Service Basic Ownership layer, digitized from maps and imagery or GPS-collected. The agency does not warrant their accuracy, so acreages are approximate.
-- "Non-FS" is not the same as "private": it includes state, local, and other federal land (e.g. Army Corps). The data doesn't say who owns it.
+- "Non-FS" is not the same as "private": it includes state, local, and other federal land (e.g. NPS, BLM, Army). The data doesn't say who owns it.
 - Ownership is not the same as management: the Forest Service also works on non-FS land through partnerships (e.g. fire, conservation easements, watershed projects), which this map doesn't show.
-- Covers the three Chattahoochee ranger districts only; the Oconee National Forest is not included.
-- Ownership data changes as the Forest Service buys and sells land; figures reflect the layer as accessed in Nov 2026.
+- The Oconee National Forest is not included, which is jointly managed along with the Chattahoochee.
+- Ownership data changes as the Forest Service buys and sells land, so figures reflect only the layer as accessed in Nov 2026.
 
 ## Data
 
